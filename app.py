@@ -7,7 +7,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 import datetime
 from gtts import gTTS
-import pygame
 import tempfile
 import os
 
@@ -17,13 +16,9 @@ def speak(text):
         with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as f:
             tmp_path = f.name
         tts.save(tmp_path)
-        pygame.mixer.init()
-        pygame.mixer.music.load(tmp_path)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
-        pygame.mixer.quit()
-        os.unlink(tmp_path)
+        st.audio(tmp_path, format='audio/mp3')
+    except Exception as e:
+        st.error(f"Voice error: {e}")
     except Exception as e:
         st.error(f"Voice error: {e}")
 import plotly.graph_objects as go
