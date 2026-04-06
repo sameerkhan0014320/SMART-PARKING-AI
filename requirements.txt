@@ -7,5 +7,4 @@ streamlit-folium
 plotly
 streamlit-autorefresh
 gTTS
-pygame
 reportlab
