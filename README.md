@@ -20,5 +20,4 @@ Birmingham Parking Dataset — Kaggle (35,717 records | 8 zones)
 pip install -r requirements.txt
 streamlit run app.py
 
-## Project Info
-AI Applications Lab (25ECP-102) | Project 72 | Section 504-A
+
